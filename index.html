@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music player</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./icon/fontawesome-free-6.0.0-web/css/all.css">
+  <body>
+      <div class="player">
+      <!-- Dashboard -->
+      <div class="dashboard">
+        <h2 class="name-app">Zing Music</h2>
+      <i class="fa-solid fa-bars icon-menu"></i>
+        <!-- CD -->
+        <div class="cd">
+          <div class="cd-thumb">
+          </div>
+        </div>
+    
+        <!-- Header -->
+        <header>
+         <span><i class="fa-solid fa-music"></i></span> 
+         <h2></h2>
+          <h3 class="name-sigle"></h3>
+        </header>
+    
+        <!-- Control -->
+        <div class="control">
+          <div class="btn btn-repeat repeat-option">
+            <i class="fas fa-redo"></i>
+          </div>
+          <div class="btn btn-prev">
+            <i class="fas fa-step-backward"></i>
+          </div>
+          <div class="btn btn-toggle-play">
+            <i class="fas fa-pause icon-pause"></i>
+            <i class="fas fa-play icon-play"></i>
+          </div>
+          <div class="btn btn-next">
+            <i class="fas fa-step-forward"></i>
+          </div>
+          <div class="btn btn-random random-option">
+            <!-- <i class="fas fa-random"></i> -->
+            <i class="fa-solid fa-rotate"></i>
+          </div>
+        </div>
+    
+        <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+    
+        <audio id="audio" src=""></audio>
+    
+      </div>
+      
+    
+      <!-- Playlist -->
+        <div class="menu-playlist">
+          <div class="menu-playlist-fixed">
+            <h3 class="list">Danh Sách Phát Nhạc</h3>
+            <i class="fa-solid fa-xmark  icon-menu icon-menu-list"></i>
+          </div>
+          <div class="playlist">
+          </div>
+      </div>
+</body>
+  
+ 
+<script src="./app1.js"></script>
+
+<!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
+</html>

@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Montserrat:wght@600&display=swap');
+:root {
+  --primary-color: rgb(81, 74, 157);
+  --text-color: #fff;
+  --sub-color: rgba(14, 132, 161, 0.932);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(53deg, rgb(215, 226, 226), rgba(37, 133, 189, 0.705));
+}
+
+@media (max-width:739px){
+  body {
+    background-image: linear-gradient(53deg, rgb(255, 255, 255), rgb(255, 255, 255));
+  }
+
+  .dashboard {
+    border-radius: 0px;
+  }
+}
+
+/* html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+} */
+
+.name-app {
+  text-align: center;
+  color: #fff;
+}
+
+.player {
+  position: relative;
+  width: 480px;
+  margin: 0 auto;
+}
+
+.player .icon-pause {
+  display: none;
+  font-size: 40px;
+}
+
+.player.playing .icon-pause {
+  display: flex;
+}
+
+.player.playing .icon-play {
+  display: none;
+  font-size: 40px;
+}
+
+.icon-play {
+  font-size: 40px;
+}
+
+.dashboard {
+  padding: 10px 20px;
+  background-color: #fff;
+  width: 480px;
+  border-bottom: 1px solid #ebebeb;
+  /* background: linear-gradient(to top, var(--primary-color),red, var(--sub-color), rgba(0, 0, 0, 0.616));
+  background: linear-gradient(to top, #c31432, #240b36); */
+  /* background: rgb(2,0,36);
+  background: linear-gradient(to bottom, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(27, 126, 146) 100%); */
+  background: linear-gradient(56deg, rgb(36, 198, 220), rgb(81, 74, 157));
+  display: flex;
+  flex-direction: column;
+  /* padding-bottom: 20px; */
+  /* overflow: hidden; */
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h4 {
+  color: var(--primary-color);
+  font-size: 12px;
+}
+
+header h2 {
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+/* CD */
+.cd {
+  display: flex;
+  margin: 30px auto 25px auto;
+  width: 350px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+
+/* CONTROL */
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0 8px 0;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 60%;
+}
+
+span i {
+  color:#fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-shadow:  0 0 20px var(--primary-color);
+}
+
+.control .btn {
+  color: var(--text-color);
+  padding: 18px;
+  font-size: 40px;
+}
+
+.control .btn.active {
+  color: var(--primary-color);
+ 
+}
+
+.control .btn-toggle-play {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sub-color);
+  border:1px solid #fff;
+}
+
+
+.btn-prev, .btn-next {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(153, 153, 153, 0.514);
+  border:1px solid #fff;
+}
+
+/* PLAYLIST */
+.playlist {
+  width: 100%;
+  background-image: linear-gradient(to bottom,var(--primary-color), rgba(255, 255, 255, 0.397));
+  overflow-y: auto;
+  /* border-radius: 50px; */
+  border-radius: 80px;
+  padding: 20px;
+  border:1px solid var(--sub-color);
+}
+
+.menu-playlist {
+  position: absolute;
+  top: -5px;
+  /* height: 100%; */
+  width: 480px;
+  display: none;
+  backdrop-filter: blur(10px);
+  animation:animate  0.5s ease-in;
+  overflow-y: auto;
+  height: 740px;
+  border-radius: 20px;
+}
+
+
+.playlist:first-child {
+  margin-top: 50px;
+}
+
+@keyframes animate {
+  from
+  {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  margin: 8px;
+  border-radius: 10px;
+  background-color: rgba(182, 178, 178, 0.288);
+  box-shadow: inset 5px 5px 5px rgba(138, 135, 135, 0.288) ,inset -5px -5px 5px rgba(255, 251, 251, 0.445);
+}
+
+.song.active {
+  border: 1px solid #fff;
+  background-color: var(--primary-color);
+  box-shadow: none;
+}
+
+/* .song:active {
+  opacity: 0.8;
+} */
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: rgb(255, 255, 255);
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;  
+  padding-bottom: 12px;
+  color:#fff;
+}
+
+.song .author {
+  font-size: 13px;
+  color:#fff;
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
+
+.menu-playlist.show {
+  display: block;
+}
+
+.icon-menu {
+  position: relative;
+  top: -30px;
+  left: -8px;
+  font-size: 30px;
+  color:#fff;
+}
+
+.icon-menu-list {
+  left: 10px;
+  top: -22px;
+}
+
+.name-sigle {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.repeat-option {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  font-size: 20px !important;
+}
+
+.random-option {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  font-size: 20px !important;
+}
+
+.list {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* .menu-playlist-fixed {
+  background-color: red;
+  margin-top: -10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+} */
+
+input[type=range]{
+  border: 1px solid rgb(228, 21, 21); 
+  width: 400px;
+  margin: 15px auto 20px auto;
+}
+
+input[type=range]::-moz-range-track {
+  width: 300px;
+  height: 5px;
+  background: rgb(216, 0, 0);
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+/* .progress {
+  -webkit-appearance: none;
+  background-color: red;
+} */
+
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+
